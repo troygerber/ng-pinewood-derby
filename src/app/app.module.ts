@@ -12,13 +12,15 @@ import { LoginComponent } from './login/login.component';
 import { CarListComponent } from './car-list/car-list.component';
 import { CarComponent } from './car/car.component';
 import {AppRoutes} from './routes'
+import { ImageUploadComponent } from './image-upload/image-upload.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CarListComponent,
-    CarComponent
+    CarComponent,
+    ImageUploadComponent
   ],
   imports: [
     BrowserModule,

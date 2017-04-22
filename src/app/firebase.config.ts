@@ -5,7 +5,7 @@ export const myFirebaseConfig = {
     authDomain: 'ng-pinewood-derby.firebaseapp.com',
     databaseURL: 'https://ng-pinewood-derby.firebaseio.com',
     projectId: 'ng-pinewood-derby',
-    storageBucket: 'ng-pinewood-derby.appspot.com',
+    storageBucket: 'gs://ng-pinewood-derby.appspot.com/',
     messagingSenderId: '1063031405090'
 };
 
