@@ -8,11 +8,13 @@ import {myFirebaseConfig, myFirebaseAuthConfig } from './firebase.config';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ImageUploadComponent
   ],
   imports: [
     BrowserModule,
