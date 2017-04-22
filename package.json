@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build -prod -bh https://troygerber.github.io/ng-pinewood-derby/ && ngh"
+    "deploy-github": "ng build -prod -bh https://troygerber.github.io/ng-pinewood-derby/ && ngh",
+    "deploy-firebase": "ng build -prod -bh https://ng-pinewood-derby.firebaseapp.com/ && firebase deploy"
   },
   "private": true,
   "dependencies": {
