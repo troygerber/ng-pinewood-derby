@@ -16,7 +16,17 @@ export class CarListComponent implements OnInit {
   items: FirebaseListObservable<any>
 
   constructor(af: AngularFire){
-    this.items = af.database.list('cars');
+    
+    af.auth.subscribe(authData => {
+    console.log(authData);
+    let uid = authData.uid;
+    this.items = af.database.list('cars', {
+        query: {
+            orderByChild: 'owner',
+            equalTo: uid // currentUser.uid 
+        }
+    });
+});//this.items = af.database.list('cars');
   }
   // constructor(af: AngularFire) {
   //   this.items = af.database.list('cars').map( items =>{
