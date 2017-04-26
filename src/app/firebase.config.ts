@@ -11,5 +11,5 @@ export const myFirebaseConfig = {
 
 export const myFirebaseAuthConfig = {
     provider: AuthProviders.Google,
-    method: AuthMethods.Redirect
+    method: AuthMethods.Popup
 };

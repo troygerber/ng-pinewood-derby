@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -10,11 +11,10 @@ export class LoginComponent implements OnInit {
 
   user: any;
 
-  constructor(public af: AngularFire) { }
+  constructor(public af: AngularFire, private router: Router) { }
 
   login() {
     this.af.auth.login();
-
   }
 
   logout() {
@@ -24,13 +24,17 @@ export class LoginComponent implements OnInit {
   loginFacebook() {
     this.af.auth.login({
       provider: AuthProviders.Facebook,
-      method: AuthMethods.Redirect,
+    }).then(sucess => {
+      this.router.navigate(['/'])
     });
   }
 
   ngOnInit() {
     this.af.auth.subscribe(auth => {
-      this.user = auth.auth;
+      if (auth != null) {
+        this.user = auth.auth;
+      }
+
     });
   }
 

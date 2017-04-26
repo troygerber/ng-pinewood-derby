@@ -1,4 +1,7 @@
-<p>Welcome {{(user)?.displayName}}</p>
-<button (click)="login()">Login with Google</button>
-<button (click)="loginFacebook()">Login with Facebook</button>
-<button (click)="logout()">Logout</button>
+<button (click)="loginFacebook()" class="loginBtn loginBtn--facebook center">
+  Login with Facebook
+</button>
+<br>
+<button (click)="login()" class="loginBtn loginBtn--google center">
+  Login with Google
+</button>
