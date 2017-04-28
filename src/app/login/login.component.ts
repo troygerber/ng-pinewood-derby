@@ -3,7 +3,7 @@ import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router'
 
 @Component({
-  selector: 'app-login',
+  selector: 'pd-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })

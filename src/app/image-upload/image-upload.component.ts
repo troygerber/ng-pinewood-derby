@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { AngularFire, FirebaseApp } from 'angularfire2';
 
 @Component({
-  selector: 'app-image-upload',
+  selector: 'pd-image-upload',
   templateUrl: './image-upload.component.html',
   styleUrls: ['./image-upload.component.css']
 })
@@ -20,7 +20,7 @@ export class ImageUploadComponent implements OnInit {
    fileChangeEvent(fileInput: any){
         debugger;
         this.image = fileInput.target.files[0];
-        console.log(fileInput.target.file)      
+        console.log(fileInput.target.file)
      }
 
      upload(){

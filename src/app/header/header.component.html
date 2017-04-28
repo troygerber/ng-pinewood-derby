@@ -1,15 +1,14 @@
 <md-toolbar color="primary">
-    Pinewood Derby
-    <span *ngIf="user">
-     <a routerLink="/cars"> Cars</a>
-    </span>
-    <span class="app-toolbar-filler"></span>
-    <span *ngIf="user">
-      Welcome {{(user)?.displayName}}
-      <button md-button (click)="logout()">Logout</button>
-    </span>
-    <span *ngIf="!user">
-        <button md-button (click)="login()">Login</button>
-    </span>
-  
-  </md-toolbar>
+  Pinewood Derby
+  <span *ngIf="user">
+   <a routerLink="/cars"> Cars</a>
+  </span>
+  <span class="app-toolbar-filler"></span>
+  <span *ngIf="user">
+    Welcome {{(user)?.displayName}}
+    <button md-button (click)="logout()">Logout</button>
+  </span>
+  <span *ngIf="!user">
+      <button md-button (click)="login()">Login</button>
+  </span>
+</md-toolbar>

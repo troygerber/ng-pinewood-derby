@@ -2,3 +2,4 @@
   <li *ngFor="let item of items | async">
     <a [routerLink]="['/car', item.$key]">{{item.name}}</a>
   </li>
+</ul>

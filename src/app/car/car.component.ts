@@ -3,7 +3,7 @@ import { AngularFire, FirebaseObjectObservable} from 'angularfire2'
 import {ActivatedRoute} from '@angular/router'
 
 @Component({
-  selector: 'app-car',
+  selector: 'pd-car',
   templateUrl: './car.component.html',
   styleUrls: ['./car.component.css']
 })
@@ -12,7 +12,7 @@ export class CarComponent implements OnInit {
   item: FirebaseObjectObservable<any>;
 
   constructor(private af: AngularFire,  private route: ActivatedRoute) {
-   
+
    }
 
   ngOnInit() {

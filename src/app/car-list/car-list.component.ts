@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map'
 import { Car } from '../Car'
 
 @Component({
-  selector: 'app-car-list',
+  selector: 'pd-car-list',
   templateUrl: './car-list.component.html',
   styleUrls: ['./car-list.component.css']
 })
@@ -16,14 +16,14 @@ export class CarListComponent implements OnInit {
   items: FirebaseListObservable<any>
 
   constructor(af: AngularFire){
-    
+
     af.auth.subscribe(authData => {
     console.log(authData);
     let uid = authData.uid;
     this.items = af.database.list('cars', {
         query: {
             orderByChild: 'owner',
-            equalTo: uid // currentUser.uid 
+            equalTo: uid // currentUser.uid
         }
     });
 });//this.items = af.database.list('cars');
