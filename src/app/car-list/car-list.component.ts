@@ -8,7 +8,7 @@ import { Car } from '../Car'
 @Component({
   selector: 'pd-car-list',
   templateUrl: './car-list.component.html',
-  styleUrls: ['./car-list.component.css']
+  styleUrls: ['./car-list.component.sass']
 })
 export class CarListComponent implements OnInit {
 

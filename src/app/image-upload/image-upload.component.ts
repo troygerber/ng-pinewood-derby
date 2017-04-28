@@ -4,7 +4,7 @@ import { AngularFire, FirebaseApp } from 'angularfire2';
 @Component({
   selector: 'pd-image-upload',
   templateUrl: './image-upload.component.html',
-  styleUrls: ['./image-upload.component.css']
+  styleUrls: ['./image-upload.component.sass']
 })
 export class ImageUploadComponent implements OnInit {
 

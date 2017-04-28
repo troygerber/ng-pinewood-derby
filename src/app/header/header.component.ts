@@ -5,7 +5,7 @@ import { Router } from '@angular/router'
 @Component({
   selector: 'pd-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
 

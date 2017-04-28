@@ -5,7 +5,7 @@ import {ActivatedRoute} from '@angular/router'
 @Component({
   selector: 'pd-car',
   templateUrl: './car.component.html',
-  styleUrls: ['./car.component.css']
+  styleUrls: ['./car.component.sass']
 })
 export class CarComponent implements OnInit {
 
