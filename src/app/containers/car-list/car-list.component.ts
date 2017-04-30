@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable} from 'angularfire2'
-import {Observable} from 'rxjs'
-import "rxjs/add/operator/filter";
-import 'rxjs/add/operator/map'
-import { Car } from '../Car'
+import { AngularFire, FirebaseListObservable} from 'angularfire2';
+import {Observable} from 'rxjs';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+import { Car } from '../../Car';
 
 @Component({
-  selector: 'pd-car-list',
+  selector: 'app-pd-car-list',
   templateUrl: './car-list.component.html',
   styleUrls: ['./car-list.component.sass']
 })
 export class CarListComponent implements OnInit {
 
   // items: Observable<Car>;
-  items: FirebaseListObservable<any>
+  items: FirebaseListObservable<any>;
 
-  constructor(af: AngularFire){
+  constructor(af: AngularFire) {
 
     af.auth.subscribe(authData => {
     console.log(authData);

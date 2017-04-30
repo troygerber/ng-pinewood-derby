@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire } from 'angularfire2';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'pd-header',
+  selector: 'app-pd-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.sass']
 })
@@ -20,13 +20,13 @@ export class HeaderComponent implements OnInit {
   }
 
   login() {
-    this.router.navigate(['/login'])
+    this.router.navigate(['/login']);
   }
 
   logout() {
     this.af.auth.logout().then(suceess => {
       this.user = null;
-      this.router.navigate(['/'])
+      this.router.navigate(['/']);
     });
   }
 

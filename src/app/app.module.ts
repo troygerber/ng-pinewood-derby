@@ -11,13 +11,13 @@ import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { myFirebaseConfig, myFirebaseAuthConfig } from './firebase.config';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { CarListComponent } from './car-list/car-list.component';
-import { CarComponent } from './car/car.component';
-import { AppRoutes } from './routes'
-import { ImageUploadComponent } from './image-upload/image-upload.component';
-import { HeaderComponent } from './header/header.component';
-import { WelcomeComponent } from './welcome/welcome.component';
+import { LoginComponent } from './containers/login/login.component';
+import { AppRoutes } from './routes';
+import { HeaderComponent } from './components/header/header.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { CarListComponent } from './containers/car-list/car-list.component';
+import { CarComponent } from './containers/car/car.component';
+import { ImageUploadComponent } from './components/image-upload/image-upload.component';
 
 @NgModule({
   declarations: [

@@ -1,7 +1,7 @@
-import { CarComponent } from './car/car.component'
-import { CarListComponent } from './car-list/car-list.component'
-import{LoginComponent} from './login/login.component'
-import {WelcomeComponent} from './welcome/welcome.component'
+import { CarComponent } from './containers/car/car.component';
+import { CarListComponent } from './containers/car-list/car-list.component';
+import { LoginComponent} from './containers/login/login.component';
+import { WelcomeComponent} from './components/welcome/welcome.component';
 import { Route } from '@angular/router';
 
 export const AppRoutes: Route[] = [

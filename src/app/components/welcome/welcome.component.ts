@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'pd-welcome',
+  selector: 'app-pd-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.sass']
 })

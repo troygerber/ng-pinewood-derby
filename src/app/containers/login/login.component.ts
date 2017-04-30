@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'pd-login',
+  selector: 'app-pd-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.sass']
 })
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     this.af.auth.login({
       provider: AuthProviders.Facebook,
     }).then(sucess => {
-      this.router.navigate(['/'])
+      this.router.navigate(['/']);
     });
   }
 

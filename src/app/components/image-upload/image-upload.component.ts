@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { AngularFire, FirebaseApp } from 'angularfire2';
 
 @Component({
-  selector: 'pd-image-upload',
+  selector: 'app-pd-image-upload',
   templateUrl: './image-upload.component.html',
   styleUrls: ['./image-upload.component.sass']
 })
@@ -33,7 +33,7 @@ export class ImageUploadComponent implements OnInit {
 
    uploadImage(name, data) {
         let promise = new Promise((res,rej) => {
-            let fileName = name + ".jpg";
+            let fileName = name + '.jpg';
             let uploadTask = this.fb.storage().ref(`/posts/${fileName}`).put(data);
             uploadTask.on('state_changed', function(snapshot) {
             }, function(error) {
