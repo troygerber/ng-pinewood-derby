@@ -1,5 +1,5 @@
 import { CarComponent } from './containers/car/car.component';
-import { CarListComponent } from './containers/car-list/car-list.component';
+import { CarListComponent } from './components/car-list/car-list.component';
 import { LoginComponent} from './containers/login/login.component';
 import { WelcomeComponent} from './components/welcome/welcome.component';
 import { Route } from '@angular/router';
