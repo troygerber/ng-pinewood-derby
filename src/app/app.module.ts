@@ -22,6 +22,10 @@ import { CompetitorListComponent } from './components/competitor-list/competitor
 import { CompetitorComponent } from './containers/competitor/competitor.component';
 import { CarListComponent } from './components/car-list/car-list.component';
 import { CarComponent } from './containers/car/car.component';
+import { AddCompetitorComponent } from './components/add-competitor/add-competitor.component';
+import { AddCarComponent } from './components/add-car/add-car.component';
+import { StatsBoardComponent } from './components/stats-board/stats-board.component';
+import { UpcomingRaceComponent } from './components/upcoming-race/upcoming-race.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { CarComponent } from './containers/car/car.component';
     CompetitorComponent,
     BracketComponent,
     RaceComponent,
-    CompetitorListComponent
+    CompetitorListComponent,
+    AddCompetitorComponent,
+    AddCarComponent,
+    StatsBoardComponent,
+    UpcomingRaceComponent
   ],
   imports: [
     BrowserModule,
