@@ -1,3 +1,5 @@
-<pre>
-   {{item | async | json}}
-</pre>
+<div *ngIf="car">
+    {{car.name}}<br>
+    {{car.owner}}
+    <button (click)="update()">Update</button>
+</div>
