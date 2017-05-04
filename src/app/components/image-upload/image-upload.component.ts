@@ -11,37 +11,32 @@ export class ImageUploadComponent implements OnInit {
   image: any;
   imageUrl: any;
   fb: any;
-
-
   constructor(public af: AngularFire, @Inject(FirebaseApp) firebase: any) {
   this.fb = firebase;
   }
 
-   fileChangeEvent(fileInput: any){
-        debugger;
+   fileChangeEvent(fileInput: any) {
         this.image = fileInput.target.files[0];
-        console.log(fileInput.target.file)
      }
 
-     upload(){
-       debugger;
-       this.uploadImage('test',this.image).then(url => {
+     upload() {
+       this.uploadImage('test', this.image).then(url => {
          this.imageUrl = url;
          console.log(url);
-       })
+       });
      }
 
    uploadImage(name, data) {
-        let promise = new Promise((res,rej) => {
-            let fileName = name + '.jpg';
-            let uploadTask = this.fb.storage().ref(`/posts/${fileName}`).put(data);
+        const promise = new Promise((res, rej) => {
+            const fileName = name + '.jpg';
+            const uploadTask = this.fb.storage().ref(`/posts/${fileName}`).put(data);
             uploadTask.on('state_changed', function(snapshot) {
             }, function(error) {
                 console.log(error);
                 rej(error);
 
             }, function() {
-            var downloadURL = uploadTask.snapshot.downloadURL;
+            const downloadURL = uploadTask.snapshot.downloadURL;
                 res(downloadURL);
             });
         });

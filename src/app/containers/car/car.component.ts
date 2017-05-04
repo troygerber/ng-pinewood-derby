@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseObjectObservable} from 'angularfire2'
-import {ActivatedRoute} from '@angular/router'
-import {Car} from '../../car'
+import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+import { ActivatedRoute } from '@angular/router';
+import { Car } from '../../models/car.model';
 
 @Component({
   selector: 'app-pd-car',
@@ -10,29 +10,21 @@ import {Car} from '../../car'
 })
 export class CarComponent implements OnInit {
 
-  car: Car;
-  carO: FirebaseObjectObservable<any>;
+  car: FirebaseObjectObservable<Car>;
 
-  constructor(private af: AngularFire,  private route: ActivatedRoute) {
-
-   }
-
-   update(){
-    this.car.name = "Troy's car"
-     this.carO.set(this.car);
-   }
-
-  ngOnInit() {
-   this.route.params.map(params => {
-    return params["id"]
-   }).subscribe(id =>{
-
-     this.carO = this.af.database.object(`cars/${id}`);
-     this.carO.subscribe(data =>{
-        this.car = data as Car;
-        debugger;
-     });
-   });
+  constructor(private af: AngularFire, private route: ActivatedRoute) {
   }
 
+  update() {
+    const newName = 'Troy\'s car';
+    this.car.update({name: newName});
+  }
+
+  ngOnInit() {
+    this.route.params.map(params => {
+      return params['id'];
+    }).subscribe(id => {
+      this.car = this.af.database.object(`cars/${id}`);
+    });
+  }
 }

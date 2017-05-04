@@ -1,9 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { AngularFire, FirebaseListObservable, FirebaseRef} from 'angularfire2';
-import {Observable} from 'rxjs';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
-import { Car } from '../../Car';
+import { AngularFire, FirebaseListObservable, FirebaseRef } from 'angularfire2';
+import { Car } from '../../models/car.model';
 
 @Component({
   selector: 'app-pd-car-list',
@@ -12,43 +9,31 @@ import { Car } from '../../Car';
 })
 export class CarListComponent implements OnInit {
 
-  // items: Observable<Car>;
   items: FirebaseListObservable<any>;
   uid: string;
   carRef;
 
-  constructor(af: AngularFire, @Inject(FirebaseRef) fb){
-    this.carRef = fb.database().ref("/cars");
-    af.auth.subscribe(authData => {
-    console.log(authData);
-    this.uid = authData.uid;
-    this.items = af.database.list('cars', {
-        query: {
-            orderByChild: 'owner',
-            equalTo: this.uid // currentUser.uid
-        }
-    });
-});//this.items = af.database.list('cars');
+  constructor(private af: AngularFire, @Inject(FirebaseRef) fb) {
+    this.carRef = fb.database().ref('/cars');
   }
-  add(){
-    
-    //let ref = this.fb.database().ref("/cars");
-  //   ref.push(car)
-  let car = new Car();
-  car.name = "Troy2";
-  car.owner = this.uid;
-  //var cars = this.items.push(car);
-   //ref.push(car);
-   this.carRef.push(car);
 
-}
-  // constructor(af: AngularFire) {
-  //   this.items = af.database.list('cars').map( items =>{
-  //     return items.filter(item => (<Car>item).name ==='Test car 2');
-  //   });
-  //  }
+  add() {
+    const car = new Car();
+    car.name = 'Troy2';
+    car.owner = this.uid;
+    this.carRef.push(car);
+  }
 
   ngOnInit() {
+    this.af.auth.subscribe(authData => {
+      this.uid = authData.uid;
+      this.items = this.af.database.list('cars', {
+        query: {
+          orderByChild: 'owner',
+          equalTo: this.uid
+        }
+      });
+    });
   }
 
 }

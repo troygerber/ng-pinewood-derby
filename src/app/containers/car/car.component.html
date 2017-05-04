@@ -1,5 +1,14 @@
-<div *ngIf="car">
+<!--<div *ngIf="car">
     {{car.name}}<br>
     {{car.owner}}
     <button (click)="update()">Update</button>
-</div>
+</div>-->
+
+<span *ngIf="car | async as car; else loadingUserInfo">
+ {{car.name}}<br>
+ {{car.owner}}
+ <button (click)="update()">Update</button>
+</span>
+<ng-template #loadingUserInfo>
+  Loading car information...
+</ng-template>
