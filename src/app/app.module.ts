@@ -16,20 +16,26 @@ import { AppRoutes } from './routes';
 import { HeaderComponent } from './components/header/header.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { ImageUploadComponent } from './components/image-upload/image-upload.component';
-import { BracketComponent } from './containers/bracket/bracket.component';
+import { BracketComponent } from './components/bracket/bracket.component';
 import { RaceComponent } from './containers/race/race.component';
 import { CompetitorListComponent } from './components/competitor-list/competitor-list.component';
 import { CompetitorComponent } from './containers/competitor/competitor.component';
 import { CarListComponent } from './components/car-list/car-list.component';
 import { CarComponent } from './containers/car/car.component';
-import { AddCompetitorComponent } from './components/add-competitor/add-competitor.component';
-import { AddCarComponent } from './components/add-car/add-car.component';
+import { AddCompetitorComponent } from './containers/add-competitor/add-competitor.component';
+import { AddCarComponent } from './containers/add-car/add-car.component';
 import { StatsBoardComponent } from './components/stats-board/stats-board.component';
 import { UpcomingRaceComponent } from './components/upcoming-race/upcoming-race.component';
 import { ManageRaceComponent } from './containers/manage-race/manage-race.component';
 import { ManageCarComponent } from './containers/manage-car/manage-car.component';
 import { CheckinComponent } from './containers/checkin/checkin.component';
 import { ManageCompetitorComponent } from './containers/manage-competitor/manage-competitor.component';
+import { BracketGeneratorComponent } from './containers/bracket-generator/bracket-generator.component';
+import { AwardGeneratorComponent } from './containers/award-generator/award-generator.component';
+import { TrashTalkGeneratorComponent } from './containers/trash-talk-generator/trash-talk-generator.component';
+import { WrapperComponent } from './components/wrapper/wrapper.component';
+import { BodyComponent } from './components/body/body.component';
+import { WinScreenComponent } from './components/win-screen/win-screen.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +57,13 @@ import { ManageCompetitorComponent } from './containers/manage-competitor/manage
     ManageRaceComponent,
     ManageCarComponent,
     CheckinComponent,
-    ManageCompetitorComponent
+    ManageCompetitorComponent,
+    BracketGeneratorComponent,
+    AwardGeneratorComponent,
+    TrashTalkGeneratorComponent,
+    WrapperComponent,
+    BodyComponent,
+    WinScreenComponent
   ],
   imports: [
     BrowserModule,
