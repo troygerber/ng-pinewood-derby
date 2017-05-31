@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Car } from '../../models/car.model';
+import { FireService } from '../../services/fire.service'
 
 @Component({
   selector: 'app-pd-add-car',
@@ -7,7 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCarComponent implements OnInit {
 
-  constructor() { }
+  car: Car;
+  image: any;
+  
+  constructor(private fire: FireService) {
+    this.car = new Car();
+   }
+
+    fileChangeEvent(fileInput: any) {
+        this.image = fileInput.target.files[0];
+     }
+
+  add() {
+    this.fire.addCar(this.car, this.image)
+  }
 
   ngOnInit() {
   }

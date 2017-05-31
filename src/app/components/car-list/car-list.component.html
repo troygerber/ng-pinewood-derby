@@ -1,6 +1,7 @@
 <ul>
   <li *ngFor="let item of items | async">
-    <a [routerLink]="['/car', item.$key]">{{item.name}}</a>
+    <a [routerLink]="['/car', item.$key]">{{item.name}}</a><button (click)="delete(item.$key)">x</button>
   </li>
 </ul>
-<button (click)="add()">Add</button>
+<!--<button md-fab><md-icon>add</md-icon></button>-->
+<app-pd-add-car></app-pd-add-car>

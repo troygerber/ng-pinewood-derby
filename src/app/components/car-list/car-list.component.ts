@@ -24,6 +24,12 @@ export class CarListComponent implements OnInit {
     this.carRef.push(car);
   }
 
+  delete(key)
+  {
+    console.log(key);
+    this.af.database.object(`/cars/${key}`).remove();
+  }
+
   ngOnInit() {
     this.af.auth.subscribe(authData => {
       this.uid = authData.uid;

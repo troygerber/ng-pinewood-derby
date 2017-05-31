@@ -30,6 +30,7 @@ import { ManageRaceComponent } from './containers/manage-race/manage-race.compon
 import { ManageCarComponent } from './containers/manage-car/manage-car.component';
 import { CheckinComponent } from './containers/checkin/checkin.component';
 import { ManageCompetitorComponent } from './containers/manage-competitor/manage-competitor.component';
+import { FireService } from './services/fire.service'
 
 @NgModule({
   declarations: [
@@ -62,7 +63,7 @@ import { ManageCompetitorComponent } from './containers/manage-competitor/manage
     AngularFireModule.initializeApp(myFirebaseConfig, myFirebaseAuthConfig),
     RouterModule.forRoot(AppRoutes)
   ],
-  providers: [],
+  providers: [FireService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

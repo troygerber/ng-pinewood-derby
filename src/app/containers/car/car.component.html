@@ -6,7 +6,8 @@
 
 <span *ngIf="car | async as car; else loadingUserInfo">
  {{car.name}}<br>
- {{car.owner}}
+ {{car.owner}}<br>
+ <img height="100" [src]="car.image"><br>
  <button (click)="update()">Update</button>
 </span>
 <ng-template #loadingUserInfo>

@@ -1,3 +1,7 @@
-<p>
-  add-car works!
-</p>
+<div>
+<md-input-container>
+  <input mdInput [(ngModel)]="car.name" placeholder="Name">
+</md-input-container><br>
+<input type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." /><br>
+<button (click)="add()" md-raised-button>Save</button>
+</div>
